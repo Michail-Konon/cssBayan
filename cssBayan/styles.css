@@ -176,7 +176,3 @@ input:checked + label > .img-filler {
         --main-font: 4.75em;
     }
 }
-
-/*
-Font size is changed at each device (mobile, tablet, desktop) +5
-*/
