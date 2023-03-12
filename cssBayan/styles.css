@@ -1,5 +1,5 @@
 :root {
-  --main-bg-color: rgb(14, 0, 164);
+    --main-font: 18.75em;
 }
 
 .body {
@@ -10,19 +10,19 @@
     align-items: center;
     justify-content: center;
     align-content: center;
+    transition: 0.2s;
 }
 
 .main-section {
     display: flex;
     flex-direction: column;
-    width: 90vw;
-    max-width: 800px;
-    height: 80vh;
+    width: 85vw;
+    height: 70vh;
     background: rgb(255, 255, 255);
-    padding: 10px;
     justify-content: flex-start;
     align-items: center;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 .main-section:hover > .wrapper > .section-item > .item-content > .item-wrapper > .ico {
@@ -40,6 +40,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: 0.2s;
 }
 
 .wrapper {
@@ -47,26 +48,31 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 0.4em;
+    transition: 0.2s;
 }
 
 .item-content {
     width: 40vw;
     display: flex;
     flex-direction: column;
-    padding: 10px;
-    border: 2px solid black;
+    padding: 2%;
+    border: 0.1em solid black;
     cursor: pointer;
+    transition: 0.2s;
+    align-items: center;
 }
 
 .item-content div {
     color: blue;
-    font-size: 24px;
+    font-size: 1.25em;
     font-weight: 600;
+    transition: 0.2s;
 }
 
 .img-filler {
     width: auto;
-    height: 0px;
+    height: 0;
     transition: 0.2s;
 }
 
@@ -74,6 +80,10 @@
     transform: rotateZ(45deg);
     transition: 0.2s;
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(259deg) brightness(102%) contrast(102%);
+}
+
+label:active {
+    opacity: 0.5;
 }
 
 input:checked + label > .item-wrapper > .ico {
@@ -88,13 +98,13 @@ input:checked ~ label div  {
 }
 
 input:checked + label > .img-filler {
-    height: 300px;
-    transition: 0.5s;
+    height:  var(--main-font);
+    transition: 0.2s;
 }
 
 .section-item:hover > .item-content > .img-filler {
-    height: 300px;
-    transition: 0.5s;
+    height:  var(--main-font);
+    transition: 0.2s;
 }
 
 .section-item:hover > .item-content > .item-wrapper > .ico {
@@ -131,10 +141,46 @@ input:checked + label > .img-filler {
     justify-content: space-between;
 }
 
+@media (max-width: 900px) {
+    .main-section {
+        display: flex;
+        flex-direction: column;
+        width: 70vw;
+        height: 50vh;
+        background: rgb(255, 255, 255);
+        justify-content: flex-start;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .item-content div {
+        color: blue;
+        font-size: 1em;
+        font-weight: 600;
+        transition: 0.2s;
+    }
+
+    :root {
+        --main-font: 12.75em;
+    }
+}
+
+@media (max-width: 330px) {
+    .main-section {
+        height: 55vh;
+    }
+
+    :root {
+        --main-font: 4.75em;
+    }
+}
+
 /*
-так же ховер для изменения стиля при наведении на ВЕСЬ Юник
 https://github.com/DrDiman/CSS-Bayan-task
-корректное отображение на mobile 320x568, tablet 820x1180, desktop 1920×1080;
-прикрутить поинтер
-изменение фонта на разных разрешениях
+
+Responsive design with three breakpoints for mobile, tablet, and desktop exist.
+Accordion is displayed correctly at mobile 320x568, tablet 820x1180, desktop 1920×1080.
+
+Font size is changed at each device (mobile, tablet, desktop) +5
 */
