@@ -1,3 +1,7 @@
+:root {
+  --main-bg-color: rgb(14, 0, 164);
+}
+
 .body {
     display: flex;
     width: 100%;
@@ -11,11 +15,14 @@
 .main-section {
     display: flex;
     flex-direction: column;
-    width: 60vw;
-    height: 60vh;
-    background: gray;
+    width: 80vw;
+    max-width: 800px;
+    height: 80vh;
+    background: rgb(255, 255, 255);
     padding: 10px;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
 }
 
 .section-item {
@@ -32,26 +39,72 @@
 }
 
 .item-content {
-    width: 20vw;
+    width: 40vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 10px;
     border: 2px solid black;
+    cursor: pointer;
 }
 
 .img-filler {
-    background-color: black;
-    width: 100px;
+    width: auto;
     height: 0px;
     transition: 0.2s;
 }
 
-input:checked + label {
+.ico {
+    transform: rotateZ(45deg);
+    transition: 0.2s;
+}
+
+input:checked + label .ico {
     color: red;
+    transform: rotateZ(0deg);
+    transition: 0.2s;
 }
 
 input:checked ~ .img-filler {
-    height: 100px;
+    height: 300px;
     transition: 0.5s;
 }
+
+.section-item:hover > .img-filler {
+    height: 300px;
+    transition: 0.5s;
+}
+
+.section-item:hover > .item-content > .ico {
+    transform: rotateZ(0deg);
+    transition: 0.2s;
+}
+
+
+.img-first {
+    background-image: url(./assets/img/nebula-carina.jpg);
+}
+
+.img-second {
+    background-image: url(./assets/img/nebula-orion.jpg);
+}
+
+.img-third {
+    background-image: url(./assets/img/nebula-crab.jpg);
+}
+
+.img-fourth {
+    background-image: url(./assets/img/nebula-tarantula.jpg);
+}
+
+.img-fifth {
+    background-image: url(./assets/img/nebula-helix.jpg);
+}
+
+/*
+так же ховер для изменения стиля при наведении на ВЕСЬ Юник
+https://github.com/DrDiman/CSS-Bayan-task
+корректное отображение на mobile 320x568, tablet 820x1180, desktop 1920×1080;
+прикрутить поинтер
+изменение фонта на разных разрешениях
+*/
