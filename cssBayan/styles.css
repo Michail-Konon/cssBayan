@@ -1,0 +1,178 @@
+:root {
+    --main-font: 18.75em;
+}
+
+.body {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    transition: 0.2s;
+}
+
+.main-section {
+    display: flex;
+    flex-direction: column;
+    width: 85vw;
+    height: 70vh;
+    background: rgb(255, 255, 255);
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.main-section:hover > .wrapper > .section-item > .item-content > .item-wrapper > .ico {
+    filter: none;
+    transition: 0.2s;
+}
+
+.main-section:hover > .wrapper > .section-item > .item-content > .item-wrapper > div{
+    color: black;
+    filter: none;
+    transition: 0.2s;
+}
+
+.section-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
+    transition: 0.2s;
+}
+
+.item-content {
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    border: 0.1em solid black;
+    cursor: pointer;
+    transition: 0.2s;
+    align-items: center;
+}
+
+.item-content div {
+    color: blue;
+    font-size: 1.25em;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.img-filler {
+    width: auto;
+    height: 0;
+    transition: 0.2s;
+}
+
+.ico {
+    transform: rotateZ(45deg);
+    transition: 0.2s;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(259deg) brightness(102%) contrast(102%);
+}
+
+label:active {
+    opacity: 0.5;
+}
+
+input:checked + label > .item-wrapper > .ico {
+    filter: none;
+    transform: rotateZ(0deg);
+    transition: 0.2s;
+}
+
+input:checked ~ label div  {
+    color: black;
+    transition: 0.2s;
+}
+
+input:checked + label > .img-filler {
+    height:  var(--main-font);
+    transition: 0.2s;
+}
+
+.section-item:hover > .item-content > .img-filler {
+    height:  var(--main-font);
+    transition: 0.2s;
+}
+
+.section-item:hover > .item-content > .item-wrapper > .ico {
+    filter: none;
+    transform: rotateZ(0deg);
+    transition: 0.2s;
+}
+
+
+.img-first {
+    background-image: url(./assets/img/nebula-carina.jpg);
+}
+
+.img-second {
+    background-image: url(./assets/img/nebula-orion.jpg);
+}
+
+.img-third {
+    background-image: url(./assets/img/nebula-crab.jpg);
+}
+
+.img-fourth {
+    background-image: url(./assets/img/nebula-tarantula.jpg);
+}
+
+.img-fifth {
+    background-image: url(./assets/img/nebula-helix.jpg);
+}
+
+.item-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+@media (max-width: 900px) {
+    .main-section {
+        display: flex;
+        flex-direction: column;
+        width: 70vw;
+        height: 50vh;
+        background: rgb(255, 255, 255);
+        justify-content: flex-start;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .item-content div {
+        font-size: 1em;
+    }
+
+    :root {
+        --main-font: 12.75em;
+    }
+}
+
+@media (max-width: 330px) {
+    .item-content div {
+        font-size: 0.8em;
+    }
+
+    .main-section {
+        height: 55vh;
+    }
+
+    :root {
+        --main-font: 4.75em;
+    }
+}
