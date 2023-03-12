@@ -155,10 +155,7 @@ input:checked + label > .img-filler {
     }
 
     .item-content div {
-        color: blue;
         font-size: 1em;
-        font-weight: 600;
-        transition: 0.2s;
     }
 
     :root {
@@ -167,6 +164,10 @@ input:checked + label > .img-filler {
 }
 
 @media (max-width: 330px) {
+    .item-content div {
+        font-size: 0.8em;
+    }
+
     .main-section {
         height: 55vh;
     }
@@ -177,10 +178,5 @@ input:checked + label > .img-filler {
 }
 
 /*
-https://github.com/DrDiman/CSS-Bayan-task
-
-Responsive design with three breakpoints for mobile, tablet, and desktop exist.
-Accordion is displayed correctly at mobile 320x568, tablet 820x1180, desktop 1920×1080.
-
 Font size is changed at each device (mobile, tablet, desktop) +5
 */
