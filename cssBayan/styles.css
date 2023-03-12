@@ -15,7 +15,7 @@
 .main-section {
     display: flex;
     flex-direction: column;
-    width: 80vw;
+    width: 90vw;
     max-width: 800px;
     height: 80vh;
     background: rgb(255, 255, 255);
@@ -23,6 +23,17 @@
     justify-content: flex-start;
     align-items: center;
     cursor: pointer;
+}
+
+.main-section:hover > .wrapper > .section-item > .item-content > .ico {
+    filter: none;
+    transition: 0.2s;
+}
+
+.main-section:hover > .wrapper > .section-item > .item-content > div{
+    color: black;
+    filter: none;
+    transition: 0.2s;
 }
 
 .section-item {
@@ -48,6 +59,12 @@
     cursor: pointer;
 }
 
+.item-content div {
+    color: blue;
+    font-size: 24px;
+    font-weight: 600;
+}
+
 .img-filler {
     width: auto;
     height: 0px;
@@ -57,11 +74,17 @@
 .ico {
     transform: rotateZ(45deg);
     transition: 0.2s;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(259deg) brightness(102%) contrast(102%);
 }
 
 input:checked + label .ico {
-    color: red;
+    filter: none;
     transform: rotateZ(0deg);
+    transition: 0.2s;
+}
+
+input:checked ~ label div  {
+    color: black;
     transition: 0.2s;
 }
 
@@ -76,6 +99,7 @@ input:checked ~ .img-filler {
 }
 
 .section-item:hover > .item-content > .ico {
+    filter: none;
     transform: rotateZ(0deg);
     transition: 0.2s;
 }
